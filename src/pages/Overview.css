@@ -1,0 +1,154 @@
+.overview-page {
+  max-width: 1280px;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.overview-chart-panel,
+.overview-trending-panel,
+.overview-top-panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+}
+
+.trending-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.trending-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 4px;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background 0.12s ease;
+}
+
+.trending-row:hover {
+  background: var(--bg-hover);
+}
+
+.trending-rank {
+  width: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.trending-icon {
+  border-radius: 50%;
+}
+
+.trending-meta {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.trending-name {
+  font-size: 13px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.trending-symbol {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.trending-cap-rank {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.mini-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.mini-card {
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  color: var(--text-primary);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.mini-card:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-hover);
+}
+
+.mini-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mini-card-symbol {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.mini-card-price {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.mini-card-cap {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 1100px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
