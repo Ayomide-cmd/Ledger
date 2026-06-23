@@ -1,6 +1,6 @@
 import './KpiCard.css'
 
-export default function KpiCard({ label, value, delta, deltaLabel, sublabel }) {
+export default function KpiCard({ label, value, delta, deltaLabel, sublabel, icon }) {
   const deltaClass =
     delta === undefined || delta === null
       ? ''
@@ -10,12 +10,15 @@ export default function KpiCard({ label, value, delta, deltaLabel, sublabel }) {
 
   return (
     <div className="kpi-card">
-      <p className="kpi-label">{label}</p>
+      <div className="kpi-card-top">
+        <p className="kpi-label">{label}</p>
+        {icon && <span className="kpi-icon">{icon}</span>}
+      </div>
       <p className="kpi-value tabular">{value}</p>
       <div className="kpi-footer">
         {delta !== undefined && delta !== null && (
           <span className={`kpi-delta tabular ${deltaClass}`}>
-            {delta >= 0 ? '▲' : '▼'} {Math.abs(delta).toFixed(2)}%
+            {delta >= 0 ? '↑' : '↓'} {Math.abs(delta).toFixed(2)}%
           </span>
         )}
         {sublabel && <span className="kpi-sublabel">{sublabel}</span>}

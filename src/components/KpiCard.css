@@ -2,24 +2,50 @@
   background: var(--bg-panel);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   padding: 18px 20px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   min-width: 0;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.kpi-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
+}
+
+.kpi-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .kpi-label {
   font-size: 11.5px;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+.kpi-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: var(--accent-fill);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .kpi-value {
-  font-size: 26px;
-  font-weight: 600;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--text-primary);
   line-height: 1.1;
   white-space: nowrap;
@@ -37,14 +63,18 @@
 .kpi-delta {
   font-weight: 600;
   font-size: 12px;
+  padding: 2px 7px;
+  border-radius: 4px;
 }
 
 .kpi-delta-positive {
   color: var(--gain);
+  background: var(--gain-fill);
 }
 
 .kpi-delta-negative {
   color: var(--loss);
+  background: var(--loss-fill);
 }
 
 .kpi-sublabel,
