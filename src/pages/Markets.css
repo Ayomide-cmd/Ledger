@@ -1,3 +1,45 @@
 .markets-page {
   max-width: 1280px;
 }
+
+.markets-stat-strip {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.markets-stat {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  padding: 12px 18px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.markets-stat-value {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.markets-stat-up {
+  color: var(--gain);
+}
+
+.markets-stat-down {
+  color: var(--loss);
+}
+
+.markets-stat-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 600px) {
+  .markets-stat-strip {
+    flex-wrap: wrap;
+  }
+}
