@@ -9,6 +9,40 @@ import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Overview.css'
 
+function KpiIcon({ kind }) {
+  if (kind === 'cap') {
+    return (
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+        <path d="M2 8h12M8 2v12" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+        <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.4" />
+      </svg>
+    )
+  }
+  if (kind === 'volume') {
+    return (
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+        <rect x="2" y="9" width="2.5" height="5" fill="currentColor" />
+        <rect x="6.75" y="5.5" width="2.5" height="8.5" fill="currentColor" />
+        <rect x="11.5" y="2" width="2.5" height="12" fill="currentColor" />
+      </svg>
+    )
+  }
+  if (kind === 'dominance') {
+    return (
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+        <circle cx="8" cy="8" r="6.2" stroke="currentColor" strokeWidth="1.4" />
+        <path d="M8 1.8A6.2 6.2 0 0114.2 8H8z" fill="currentColor" />
+      </svg>
+    )
+  }
+  return (
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <circle cx="8" cy="8" r="6.2" stroke="currentColor" strokeWidth="1.4" />
+      <path d="M8 4.6v3.6l2.4 2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  )
+}
+
 export default function Overview() {
   const navigate = useNavigate()
 
@@ -55,21 +89,25 @@ export default function Overview() {
               label="Total Market Cap"
               value={formatCurrency(totalMarketCap, { compact: true })}
               delta={marketCapChange}
+              icon={<KpiIcon kind="cap" />}
             />
             <KpiCard
               label="24h Volume"
               value={formatCurrency(totalVolume, { compact: true })}
               sublabel="across tracked assets"
+              icon={<KpiIcon kind="volume" />}
             />
             <KpiCard
               label="BTC Dominance"
               value={btcDominance ? `${btcDominance.toFixed(1)}%` : '—'}
               sublabel="of total market cap"
+              icon={<KpiIcon kind="dominance" />}
             />
             <KpiCard
               label="BTC Price (24h)"
               value={formatCurrency(bitcoin?.current_price)}
               delta={btcPriceChange}
+              icon={<KpiIcon kind="price" />}
             />
           </>
         )}
