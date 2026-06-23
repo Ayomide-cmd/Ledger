@@ -19,36 +19,7 @@ A multi-page market dashboard for tracking live cryptocurrency prices, built as 
 - Plain CSS with custom properties for theming, no CSS framework
 - No charting library — line charts and sparklines are custom SVG components
 
-## Folder structure
 
-```
-market-terminal/
-├── index.html
-├── package.json
-├── vite.config.js
-└── src/
-    ├── main.jsx
-    ├── App.jsx
-    ├── styles/
-    │   └── tokens.css
-    ├── components/
-    │   ├── Shell.jsx / Shell.css
-    │   ├── TickerTape.jsx / TickerTape.css
-    │   ├── KpiCard.jsx / KpiCard.css
-    │   ├── LineChart.jsx / LineChart.css
-    │   ├── Sparkline.jsx
-    │   ├── CoinTable.jsx / CoinTable.css
-    │   ├── PanelHeader.jsx / PanelHeader.css
-    │   └── StatusStates.jsx / StatusStates.css
-    ├── pages/
-    │   ├── Overview.jsx / Overview.css
-    │   ├── Markets.jsx / Markets.css
-    │   └── CoinDetail.jsx / CoinDetail.css
-    ├── hooks/
-    │   └── usePolling.js
-    └── utils/
-        ├── api.js
-        └── format.js
 ```
 
 ## Running locally
