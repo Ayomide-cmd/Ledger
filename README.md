@@ -1,4 +1,4 @@
-    # Ledger — Market Termin
+  # Ledger — Market Termin
 
 A multi-page market dashboard for tracking live cryptocurrency prices, built as a frontend portfolio project. Data comes from the public [CoinGecko API](https://www.coingecko.com/en/api/documentation), which requires no API key.
 
